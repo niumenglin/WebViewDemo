@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Android与WebView的js交互</title>
+<style type="text/css">
+/*	.setBody{
+		background-color: orange;
+        }*/
+        body{
+        	background-color: orange;
+        }
+        .btn{
+        	width: 80px;
+        	height: 40px;
+        	margin: 10px;
+        	text-align: center;
+        	background-color: #cccccc;
+        }
+</style>
+
+</head>
+
+<body class="setBody">
+    <h2>WebView</h2>
+    <div><span>请输入要传递的值：</span> <input type="text" id="input"></div>
+    <div id="btn"><span class="btn">点我</span></div>
+</body>
+
+<script type="text/javascript">
+	var btnEle = document.getElementById("btn");
+	var inputEle = document.getElementById("input");
+    btnEle.addEventListener("click",function(){
+    	var str = inputEle.value;
+    	// alert(str);
+    	if (window.android) {
+    		android.setValue(str);
+    	}else{
+    		alert("android not found!");
+    	}
+    });
+
+    var remote = function(str){
+        inputEle.value = str;
+    }
+	 
+
+</script>
+
+</html>

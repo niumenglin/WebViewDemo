@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"></WebView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result：" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffff0000"
+        android:textSize="20sp"
+        tools:text="Result123432342342342" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:background="#ebebeb"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:minWidth="100dp"
+            android:hint="请输入" />
+
+        <Button
+            android:id="@+id/btn_invoke_js"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="发送" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+Android与WebView的js交互
+  【WebView使用场景】
+  比如：意见反馈页、用户协议页、新闻客户端的正文页、广告页、促销活动页等等。
+
+
+  1.WebView调用Java方法。
+     共3个步骤：
+     a.允许WebView加载js代码；webView.getSettings().setJavaScriptEnabled(true);
+     b.编写js接口类；
+     c.给WebView添加js接口；  webView.addJavascriptInterface(obj,name);
+
+
+  2.Android调用js方法。
+      使用loadUrl方法调用javascript
+      webView.loadUrl(javascript:jsString);
+      jsString使用调用的js代码的字符串
+
+  3.Chrome调试。
+
+    a.打开允许调试的开关（API19及以上）
+      webView.setWebContentsDebugingEnabled(true);
+
+    b.使用Chrome浏览器进行调试
+      chrome://inspect/#devices
+
+
+js交互中常见的一些错误
+ 1.在js接口的回调方法中throw Exception
+ 2.web端不进行对象存在的判断
+ 3.传递参数类型不一致（尤其是数组和对象， 可以将其转化为json，用String类型传过去）
+ 4.字符串类型参数为空时传递undefined
+
